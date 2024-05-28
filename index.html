@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Art Website</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <!-- <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script> -->
+    <!-- <script src="https://cdn.rawgit.com/jeromeetienne/AR.js/1.7.7/aframe/build/aframe-ar.js"></script> -->
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="nav-logo">
+                <h1>Art Gallery</h1>
+            </div>
+            <div class="hamburger" id="hamburger">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+            <div class="nav-links" id="nav-links">
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#image-generator">Image Generator</a></li>
+                    <li><a href="#ar-experience">AR Experience</a></li>
+                    <li><a href="#about-us">About us</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="login.html">Login</a></li>
+                </ul>
+            </div>
+            <button id="dark-mode-toggle" class="btn-toggle"><i class="fas fa-moon"></i></button>
+        </nav>
+    </header>
+    <main>
+        <section id="home" class="home">
+            <div class="parallax">
+                <h2>Welcome to the Art Gallery</h2>
+                <p>Explore beautiful artworks and experience them in augmented reality.</p>
+                <a href="#image-generator" class="btn-main">Generate Images</a>
+            </div>
+        </section>
+        <section id="goal" class="goal">
+            <h2>Our Goal</h2>
+            <div class="goal-content">
+                <p id="goal-text"></p>
+            </div>
+        </section>
+        <section id="image-generator" class="image-generator">
+            <h2>Image Generator</h2>
+            <div class="generator-controls">
+                <input type="text" id="search-term" placeholder="Enter a search term..." class="search-input">
+                <button id="generate-button" class="btn-main">Generate Images</button>
+            </div>
+            <div class="image-grid" id="image-grid"></div>
+        </section>
+        
+        <section id="ar-experience" class="ar-experience">
+            <h2>AR Experience</h2>
+            <div id="ar-container" class="ar-container">
+                <a-scene embedded arjs>
+                    <a-marker preset="hiro">
+                        <a-image id="ar-image" position="0 0.5 0"></a-image>
+                        <a-entity camera></a-entity>
+                    </a-marker>
+                </a-scene>
+            </div>
+            <button id="start-ar" class="btn-ar">Start AR Experience</button>
+        </section>
+
+        <section id="about-us" class="about-us">
+            <h2>About Us</h2>
+            <div class="about-content">
+                <div class="team-member">
+                    <div class="member-image">
+                        <img src="duval.jpg" alt="Team Member 1">
+                    </div>
+                    <div class="member-info">
+                        <h3>Duval</h3>
+                        <p class="role">Leader</p>
+                        <p class="description">Duval is the leader of the group project. He has over 3 years of experience as a leader.</p>
+                    </div>
+                </div>
+                <div class="team-member">
+                    <div class="member-image">
+                        <img src="mahmud.jpg" alt="Team Member 2">
+                    </div>
+                    <div class="member-info">
+                        <h3>Mahmud</h3>
+                        <p class="role">Frontend developer</p>
+                        <p class="description">Mahmud is a frontend developer with extensive experience in creating and managing user interfaces.</p>
+                    </div>
+                </div>
+                <div class="team-member">
+                    <div class="member-image">
+                        <img src="maral.jpg" alt="Team Member 3">
+                    </div>
+                    <div class="member-info">
+                        <h3>Maral</h3>
+                        <p class="role">VR/Backend developer</p>
+                        <p class="description">Maral is a VR/backend developer specializing in creating and maintaining virtual reality applications.</p>
+                    </div>
+                </div>
+                <div class="team-member">
+                    <div class="member-image">
+                        <img src="mybro1.jpg" alt="Team Member 4">
+                    </div>
+                    <div class="member-info">
+                        <h3>이승기</h3>
+                        <p class="role">AR/Backend developer</p>
+                        <p class="description">이승기 is an AR/Backend developer specializing in integrating augmented reality with robust backend systems.</p>
+                    </div>
+                </div>
+                <div class="team-member">
+                    <div class="member-image">
+                        <img src="mybro2.jpg" alt="Team Member 5">
+                    </div>
+                    <div class="member-info">
+                        <h3>이산</h3>
+                        <p class="role">AR/Backend developer</p>
+                        <p class="description">이산 specializes in crafting immersive experiences and building scalable infrastructures for real-time data processing.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        
+        <section id="contact" class="contact">
+            <h2>Contact Us</h2>
+            <form id="contact-form">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" rows="4" required></textarea>
+                <button type="submit">Submit</button>
+            </form>
+        </section>
+        
+    </main>
+    
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2024 Art Gallery. All rights reserved.</p>
+            <div class="social-media">
+                <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+        </div>
+    </footer>
+    <div id="artwork-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <img id="modal-img" src="" alt="Artwork">
+            <p id="modal-title"></p>
+        </div>
+    </div>
+    <script src="java.js"></script>
+
+</body>
+</html>
